@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #4b79a1 0, #283e51 50%, #000 100%);
+  color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app {
+  max-width: 800px;
+  width: 100%;
+  padding: 24px 16px 40px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.app-header h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* Экран / карточка */
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.card {
+  background: rgba(10, 14, 18, 0.9);
+  border-radius: 18px;
+  padding: 20px 18px 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Правила */
+
+.rules {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 12px 0 18px;
+  font-size: 15px;
+}
+
+/* Кнопки */
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #ffb75e, #ed8f03);
+  color: #101010;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.btn.primary:hover {
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f7f7f7;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  box-shadow: none;
+}
+
+.btn:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+/* Верхняя строка */
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.score-badge {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Прогресс */
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #00e676, #ffd600);
+  transition: width 0.25s ease;
+}
+
+/* Вопрос */
+
+.question-text {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* Варианты */
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.option-btn {
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f7f7f7;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s, border 0.15s;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+}
+
+.option-btn-label {
+  font-weight: 600;
+  opacity: 0.85;
+  min-width: 20px;
+}
+
+.option-btn-text {
+  flex: 1;
+}
+
+.option-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.option-btn:active {
+  transform: translateY(1px);
+}
+
+/* Состояния ответа */
+
+.option-correct {
+  background: rgba(46, 204, 113, 0.14) !important;
+  border-color: rgba(46, 204, 113, 0.9) !important;
+}
+
+.option-incorrect {
+  background: rgba(231, 76, 60, 0.14) !important;
+  border-color: rgba(231, 76, 60, 0.9) !important;
+}
+
+/* Фидбек */
+
+.feedback {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.feedback.hidden {
+  display: none;
+}
+
+.feedback-correct {
+  color: #2ecc71;
+}
+
+.feedback-incorrect {
+  color: #e74c3c;
+}
+
+.feedback-explanation {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Результат */
+
+.result-main {
+  font-size: 18px;
+  margin: 10px 0 6px;
+}
+
+.result-message {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 14px;
+}
+
+/* Футер */
+
+.app-footer {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.7;
+  padding-bottom: 10px;
+}
