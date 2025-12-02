@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Финансовая грамота для детей</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>ФинIQ: деньги и безопасность</h1>
+      <p class="subtitle">Мини-игра для детей 10–14 лет</p>
+    </header>
+
+    <!-- Стартовый экран -->
+    <section id="screen-start" class="screen active">
+      <div class="card">
+        <h2>Правила игры</h2>
+        <ul class="rules">
+          <li>Отвечай на вопросы о деньгах, картах и кибербезопасности.</li>
+          <li>За каждый верный ответ получаешь 1 балл.</li>
+          <li>В конце увидишь свой результат и короткие пояснения.</li>
+        </ul>
+        <button id="btn-start" class="btn primary">Начать игру</button>
+      </div>
+    </section>
+
+    <!-- Экран с вопросами -->
+    <section id="screen-quiz" class="screen">
+      <div class="card">
+        <div class="top-row">
+          <div class="progress-text">
+            Вопрос <span id="question-number">1</span>/<span id="question-total">1</span>
+          </div>
+          <div class="score-badge">
+            Баллы: <span id="score">0</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+
+        <div id="question-text" class="question-text">
+          Здесь будет вопрос
+        </div>
+
+        <div id="options" class="options"></div>
+
+        <div id="feedback" class="feedback hidden">
+          <div id="feedback-title"></div>
+          <div id="feedback-explanation" class="feedback-explanation"></div>
+        </div>
+
+        <button id="btn-next" class="btn secondary" disabled>Следующий вопрос</button>
+      </div>
+    </section>
+
+    <!-- Экран с результатом -->
+    <section id="screen-result" class="screen">
+      <div class="card">
+        <h2>Игра окончена!</h2>
+        <p class="result-main">
+          Ты набрал(а) <span id="final-score">0</span> из
+          <span id="final-total">0</span> баллов.
+        </p>
+        <p id="result-message" class="result-message"></p>
+        <button id="btn-restart" class="btn primary">Сыграть ещё раз</button>
+      </div>
+    </section>
+  </div>
+
+  <footer class="app-footer">
+    <span>Финансовая грамотность • Вопросы для детей 10–14 лет</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
